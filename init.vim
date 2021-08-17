@@ -85,7 +85,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "(github.com/clangd/coc-clangd)
 "Run :CocConfig and save the file (even if it's empty) in order to create it
 ":CocInstall coc-clangd
-":CocCommand clangd.install
+":CocCommand clangd.install (open a .cpp file for the warning to appear if this does not work otherwise)
 "Add the following (under clangd.path) to :CocConfig to disable linting (warnings and errors):
 "    "clangd.disableDiagnostics": true
 "Add the following to enable syntax highlighting:
