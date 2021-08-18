@@ -91,6 +91,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "Add the following to enable syntax highlighting:
 "    "clangd.semanticHighlighting": true
 "
+"The whole :CocConfig should look like this (clangd.path might not be needed if clang is in $PATH):
+" {
+"  "clangd.path": "/home/me/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd",
+"  "clangd.disableDiagnostics": true,
+"  "clangd.semanticHighlighting": true
+"}
 "To specify compilation flags, add the following to CMakeLists.txt to generate compile_commands.json:
 "set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 
