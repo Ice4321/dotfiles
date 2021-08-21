@@ -29,7 +29,7 @@ call plug#begin()
 
 Plug 'cocopon/iceberg.vim' "Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Completion
-Plug 'jackguo380/vim-lsp-cxx-highlight' "Highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Highlighting
 
 call plug#end()
 
@@ -76,6 +76,16 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
+"Highlighting config
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "cpp",
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 
 """"""""""""""""""""
 "Plugins:
@@ -88,14 +98,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 ":CocCommand clangd.install (open a .cpp file for the warning to appear if this does not work otherwise)
 "Add the following (under clangd.path) to :CocConfig to disable linting (warnings and errors):
 "    "clangd.disableDiagnostics": true
-"Add the following to enable syntax highlighting:
-"    "clangd.semanticHighlighting": true
 "
 "The whole :CocConfig should look like this (clangd.path might not be needed if clang is in $PATH):
 " {
 "  "clangd.path": "/home/me/.config/coc/extensions/coc-clangd-data/install/12.0.1/clangd_12.0.1/bin/clangd",
 "  "clangd.disableDiagnostics": true,
-"  "clangd.semanticHighlighting": true
 "}
 "To specify compilation flags, add the following to CMakeLists.txt to generate compile_commands.json:
 "set(CMAKE_EXPORT_COMPILE_COMMANDS on)
