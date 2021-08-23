@@ -42,6 +42,7 @@ call plug#end()
 "Fix colour scheme
 autocmd ColorScheme * hi Normal guibg=#04040f
 autocmd ColorScheme * hi LineNr guibg=#14141f
+autocmd ColorScheme * hi LineNr guifg=#8de0c2
 
 "Set colour scheme
 colorscheme iceberg
