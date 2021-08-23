@@ -8,6 +8,7 @@ set cindent
 
 "Line numbers
 set number
+set relativenumber
 
 "Line highlight
 set cursorline
