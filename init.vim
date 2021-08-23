@@ -19,7 +19,10 @@ set laststatus=0
 set termguicolors
 
 "Scrolling margin
-:set scrolloff=4
+set scrolloff=4
+
+"Disable line wrapping
+set nowrap
 
 "Install plugin manager
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
