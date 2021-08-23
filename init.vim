@@ -18,6 +18,9 @@ set laststatus=0
 "Use 24-bit colour
 set termguicolors
 
+"Scrolling margin
+:set scrolloff=4
+
 "Install plugin manager
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
