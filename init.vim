@@ -34,19 +34,22 @@ endif
 "Install plugins
 call plug#begin()
 
-Plug 'cocopon/iceberg.vim' "Colour scheme
+"Plug 'cocopon/iceberg.vim' "Colour scheme
+Plug 'morhetz/gruvbox' "Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Completion
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Highlighting
 
 call plug#end()
 
-"Fix colour scheme
-autocmd ColorScheme * hi Normal guibg=#04040f
-autocmd ColorScheme * hi LineNr guibg=#14141f
-autocmd ColorScheme * hi LineNr guifg=#8de0c2
+"Colour scheme
+"colorscheme iceberg
+"autocmd ColorScheme * hi Normal guibg=#04040f
+"autocmd ColorScheme * hi LineNr guibg=#14141f
+"autocmd ColorScheme * hi LineNr guifg=#8de0c2
 
-"Set colour scheme
-colorscheme iceberg
+"Colour scheme
+autocmd ColorScheme * hi Normal guibg=#000000
+colorscheme gruvbox
 
 "Completion config
 set updatetime=300
