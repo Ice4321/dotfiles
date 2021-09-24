@@ -25,6 +25,34 @@ set scrolloff=4
 "Disable line wrapping
 set nowrap
 
+"Tabline always visible
+set showtabline=2
+
+"Tabline labels (from :help setting-tabline)
+:set tabline=%!MyTabLine()
+function MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    if i + 1 == tabpagenr() " select the highlighting
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+    let s .= '%' . (i + 1) . 'T' " set the tab page number (for mouse clicks)
+    let s .= '%{MyTabLabel(' . (i + 1) . ')} ' " the label is made by MyTabLabel()
+  endfor
+  let s .= '%#TabLineFill#%T' " after the last tab fill with TabLineFill and reset tab page nr
+  if tabpagenr('$') > 1 " right-align the label to close the current tab page
+    let s .= '%=%#TabLine#%999Xclose'
+  endif
+  return s
+endfunction
+function MyTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  return a:n . '|' . fnamemodify(bufname(buflist[winnr - 1]), ':t')
+endfunction
+
 "Install plugin manager
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
