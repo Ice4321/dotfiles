@@ -25,8 +25,6 @@ alias mv='\mv -vi'
 #alias clipcopy='xclip -selection clipboard'
 #alias clippaste='xclip -o -selection clipboard'
 # xbindkeys
-DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_CLI_TELEMETRY_OPTOUT
 precmd() {
 	EXIT_STATUS=$?
 	RPROMPT="%F{250}[%T]%f"
