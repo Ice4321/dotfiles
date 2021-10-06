@@ -28,6 +28,10 @@ set nowrap
 "Tabline always visible
 set showtabline=2
 
+"Tab switching shortcuts
+nnoremap H gT
+nnoremap L gt
+
 "Tabline labels (from :help setting-tabline)
 :set tabline=%!MyTabLine()
 function MyTabLine()
