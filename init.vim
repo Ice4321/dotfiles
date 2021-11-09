@@ -66,7 +66,7 @@ call plug#begin()
 Plug 'morhetz/gruvbox' "Colour scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Completion
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Highlighting
-Plug 'preservim/nerdtree' "File browser
+"Plug 'preservim/nerdtree' "File browser
 
 call plug#end()
 
@@ -122,7 +122,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "File browser config
-nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-n> :NERDTree<CR>
 
 """"""""""""""""""""
 "Plugins:
